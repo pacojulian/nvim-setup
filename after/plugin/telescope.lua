@@ -4,7 +4,11 @@ vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
 vim.keymap.set('n', '<leader>fs', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
-vim.keymap.set('n', '<leader>fd', builtin.lsp_definitions, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>fl', builtin.lsp_document_symbols, {})
+vim.keymap.set('n', '<leader>fm', builtin.lsp_workspace_symbols, {})
+--vim.keymap.set('n', '<leader>fe', builtin.file_browser, {})
+
 require('telescope').setup {
     defaults = {
         file_ignore_patterns = { "node_modules" }
