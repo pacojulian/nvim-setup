@@ -125,11 +125,6 @@ _G.packer_plugins = {
     path = "/Users/allanjulian/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
-  ["lazygit.nvim"] = {
-    loaded = true,
-    path = "/Users/allanjulian/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
-    url = "https://github.com/kdheepak/lazygit.nvim"
-  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/Users/allanjulian/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -159,6 +154,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/allanjulian/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-comment"] = {
+    loaded = true,
+    path = "/Users/allanjulian/.local/share/nvim/site/pack/packer/start/nvim-comment",
+    url = "https://github.com/terrortylor/nvim-comment"
   },
   ["nvim-lspconfig"] = {
     loaded = true,

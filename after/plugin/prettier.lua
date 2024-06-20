@@ -15,6 +15,7 @@ prettier.setup({
         "typescript",
         "typescriptreact",
         "yaml",
+        "go",
         "lua",
     },
     cli_options = {

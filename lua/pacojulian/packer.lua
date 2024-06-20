@@ -71,7 +71,7 @@ return require('packer').startup(function(use)
         tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
 
-
+    -- nvim v0.7.2
     use('terrortylor/nvim-comment')
     use('neovim/nvim-lspconfig')
     use('jose-elias-alvarez/null-ls.nvim')
@@ -79,14 +79,6 @@ return require('packer').startup(function(use)
     use("folke/zen-mode.nvim")
     use("github/copilot.vim")
 
-    -- lazigit
-    -- nvim v0.7.2
-    use({
-        "kdheepak/lazygit.nvim",
-        -- optional for floating window border decoration
-        requires = {
-            "nvim-lua/plenary.nvim",
-        },
-    })
+
 
 end)
