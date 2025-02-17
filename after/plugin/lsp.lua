@@ -11,7 +11,9 @@ lsp.ensure_installed({
   'eslint',       -- ESLint for JavaScript/TypeScript linting
   'sumneko_lua',  -- Lua language server
   'rust_analyzer', -- Rust language server
-  'svelte'        -- Svelte language server
+  'svelte',        -- Svelte language server
+  'gopls'         -- Go language server
+
 })
 
 -- Configure the Lua language server to recognize 'vim' as a global variable
