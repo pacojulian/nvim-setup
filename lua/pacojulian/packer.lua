@@ -33,12 +33,20 @@ return require('packer').startup(function(use)
     --})
 
     use({
-        "neanias/everforest-nvim",
-        -- Optional; default configuration will be used if setup isn't called.
+        'AlexvZyl/nordic.nvim',
         config = function()
-            require("everforest").setup()
+            -- Set up the Nordic theme
+            require('nordic').setup({
+                -- Optional: You can pass customization options here if needed
+                comment_italic = true, -- Example: Set comments to be italic
+                style = "dark",    -- Set the theme style (dark or light)
+            })
+
+            -- Apply the theme
+            vim.cmd('colorscheme nordic')
         end,
     })
+
 
     use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
     use('nvim-treesitter/playground')
@@ -79,10 +87,8 @@ return require('packer').startup(function(use)
         'nvim-tree/nvim-tree.lua',
         requires = {
             'nvim-tree/nvim-web-devicons', -- optional, for file icons
-        },
-        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+        }
     }
-
     -- nvim v0.7.2
     use('terrortylor/nvim-comment')
     use('neovim/nvim-lspconfig')
@@ -90,7 +96,4 @@ return require('packer').startup(function(use)
     use('MunifTanjim/prettier.nvim')
     use("folke/zen-mode.nvim")
     use("github/copilot.vim")
-
-
-
 end)
