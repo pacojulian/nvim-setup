@@ -1,8 +1,8 @@
--- disable netrw at the very start of your init.lua (strongly advised)
+-- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- set termguicolors to enable highlight groups
+-- optionally enable 24-bit colour
 vim.opt.termguicolors = true
 
 -- empty setup using defaults
@@ -10,9 +10,11 @@ require("nvim-tree").setup()
 
 -- OR setup with some options
 require("nvim-tree").setup({
-  sort_by = "case_sensitive",
+  sort = {
+    sorter = "case_sensitive",
+  },
   view = {
-    adaptive_size = true,
+    width = 30,
   },
   renderer = {
     group_empty = true,
@@ -20,13 +22,4 @@ require("nvim-tree").setup({
   filters = {
     dotfiles = true,
   },
-  -- Use the new on_attach function to define key mappings
-  on_attach = function(bufnr)
-    local api = require('nvim-tree.api')
-
-    -- Define your key mappings here
-    local opts = { noremap = true, silent = true, buffer = bufnr }
-    vim.keymap.set('n', 'u', api.tree.change_root_to_parent, opts) -- This replaces "dir_up"
-  end,
 })
-

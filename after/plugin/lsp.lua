@@ -10,8 +10,22 @@ require('mason').setup({})
 
 -- Mason LSP Config setup
 require("mason-lspconfig").setup {
-    ensure_installed = { "lua_ls", "rust_analyzer", "bashls", "tailwindcss", "cssls", "docker_compose_language_service", "dockerls", "gopls", "graphql", "html", "eslint",
-        "marksman", "pylyzer", "sqls", "ts_ls"
+    ensure_installed = {
+        "lua_ls",
+        "rust_analyzer",
+        "bashls",
+        "tailwindcss",
+        "cssls",
+        "docker_compose_language_service",
+        "dockerls",
+        "gopls",
+        "graphql",
+        "html",
+        "eslint",
+        "marksman",
+        "pylyzer",
+        "sqls",
+        "ts_ls",
     },
 }
 
@@ -19,8 +33,20 @@ require("mason-lspconfig").setup {
 -- Setup individual LSP servers
 local lspconfig = require('lspconfig')
 
-lspconfig.typescript_language_server.setup({})
-lspconfig.eslint.setup({})
+lspconfig["ts_ls"].setup({})
+-- Setup eslint for JSX/JavaScript support
+lspconfig.eslint.setup({
+  flags = {
+    allow_incremental_sync = false,
+    debounce_text_changes = 1000,
+  },
+})
+lspconfig.tailwindcss.setup({
+  flags = {
+    debounce_text_changes = 1000,
+  },
+})
+
 lspconfig.lua_ls.setup({
     settings = {
         Lua = {
@@ -30,7 +56,7 @@ lspconfig.lua_ls.setup({
         }
     }
 })
-require'lspconfig'.gopls.setup{}
+require 'lspconfig'.gopls.setup {}
 -- Require cmp for completion management
 local cmp = require('cmp')
 
@@ -95,6 +121,7 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, opts)
     vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
 end)
+
 
 -- Set up the overall configuration for lsp-zero
 lsp.setup()
