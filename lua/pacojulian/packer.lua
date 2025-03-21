@@ -8,9 +8,15 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.4',
-        -- or                            , branch = '0.1.x',
+        'nvim-telescope/telescope.nvim',
+        branch = '0.1.x', -- Use the 0.1.x branch for latest updates; or pin to a newer tag like '0.1.8' if preferred
         requires = { { 'nvim-lua/plenary.nvim' } }
+    }
+
+    use {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'make', -- Build step to compile the native sorter
+        requires = { { 'nvim-telescope/telescope.nvim' } }
     }
     use { "anuvyklack/windows.nvim",
         requires = {
@@ -39,7 +45,7 @@ return require('packer').startup(function(use)
             require('nordic').setup({
                 -- Optional: You can pass customization options here if needed
                 comment_italic = true, -- Example: Set comments to be italic
-                style = "dark",    -- Set the theme style (dark or light)
+                style = "dark",        -- Set the theme style (dark or light)
             })
 
             -- Apply the theme
