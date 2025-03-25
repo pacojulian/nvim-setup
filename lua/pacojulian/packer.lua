@@ -14,6 +14,20 @@ return require('packer').startup(function(use)
     }
 
     use {
+        'romgrk/barbar.nvim',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- Optional: for file icons
+        },
+        config = function()
+            vim.g.barbar_auto_setup = false -- Disable auto-setup to customize
+            require('barbar').setup {
+                animation = false,          -- Disable animations for a static view
+                tabpages = false,           -- Hide native tab page indicators
+                clickable = true,           -- Allow clicking buffers to switch
+            }
+        end,
+    }
+    use {
         'nvim-telescope/telescope-fzf-native.nvim',
         run = 'make', -- Build step to compile the native sorter
         requires = { { 'nvim-telescope/telescope.nvim' } }
