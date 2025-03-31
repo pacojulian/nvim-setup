@@ -1,5 +1,3 @@
 -- In Lua
-vim.cmd([[colorscheme everforest]])
+vim.cmd([[colorscheme nordic]])
 
--- Alternatively
-require("everforest").load()

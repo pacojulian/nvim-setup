@@ -8,9 +8,29 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.4',
-        -- or                            , branch = '0.1.x',
+        'nvim-telescope/telescope.nvim',
+        branch = '0.1.x', -- Use the 0.1.x branch for latest updates; or pin to a newer tag like '0.1.8' if preferred
         requires = { { 'nvim-lua/plenary.nvim' } }
+    }
+
+    use {
+        'romgrk/barbar.nvim',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- Optional: for file icons
+        },
+        config = function()
+            vim.g.barbar_auto_setup = false -- Disable auto-setup to customize
+            require('barbar').setup {
+                animation = false,          -- Disable animations for a static view
+                tabpages = false,           -- Hide native tab page indicators
+                clickable = true,           -- Allow clicking buffers to switch
+            }
+        end,
+    }
+    use {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'make', -- Build step to compile the native sorter
+        requires = { { 'nvim-telescope/telescope.nvim' } }
     }
     use { "anuvyklack/windows.nvim",
         requires = {
@@ -33,12 +53,20 @@ return require('packer').startup(function(use)
     --})
 
     use({
-        "neanias/everforest-nvim",
-        -- Optional; default configuration will be used if setup isn't called.
+        'AlexvZyl/nordic.nvim',
         config = function()
-            require("everforest").setup()
+            -- Set up the Nordic theme
+            require('nordic').setup({
+                -- Optional: You can pass customization options here if needed
+                comment_italic = true, -- Example: Set comments to be italic
+                style = "dark",        -- Set the theme style (dark or light)
+            })
+
+            -- Apply the theme
+            vim.cmd('colorscheme nordic')
         end,
     })
+
 
     use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
     use('nvim-treesitter/playground')
@@ -79,18 +107,22 @@ return require('packer').startup(function(use)
         'nvim-tree/nvim-tree.lua',
         requires = {
             'nvim-tree/nvim-web-devicons', -- optional, for file icons
-        },
-        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+        }
     }
-
     -- nvim v0.7.2
     use('terrortylor/nvim-comment')
     use('neovim/nvim-lspconfig')
     use('jose-elias-alvarez/null-ls.nvim')
     use('MunifTanjim/prettier.nvim')
     use("folke/zen-mode.nvim")
-    use("github/copilot.vim")
 
-
-
+    -- comments --
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+    --  /
+    --  use("github/copilot.vim")
 end)
