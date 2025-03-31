@@ -85,6 +85,7 @@ _G.packer_plugins = {
     url = "https://github.com/anuvyklack/animation.nvim"
   },
   ["barbar.nvim"] = {
+    config = { "\27LJ\2\nÉ\1\0\0\3\0\a\0\v6\0\0\0009\0\1\0+\1\1\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0005\2\6\0B\0\2\1K\0\1\0\1\0\3\rtabpages\1\14animation\1\14clickable\2\nsetup\vbarbar\frequire\22barbar_auto_setup\6g\bvim\0" },
     loaded = true,
     path = "/Users/allanjulian/.local/share/nvim/site/pack/packer/start/barbar.nvim",
     url = "https://github.com/romgrk/barbar.nvim"
@@ -113,11 +114,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/allanjulian/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
-  },
-  ["copilot.vim"] = {
-    loaded = true,
-    path = "/Users/allanjulian/.local/share/nvim/site/pack/packer/start/copilot.vim",
-    url = "https://github.com/github/copilot.vim"
   },
   ["formatter.nvim"] = {
     loaded = true,
@@ -196,10 +192,9 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/allanjulian/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
-    url = "https://github.com/kyazdani42/nvim-web-devicons"
+    loaded = true,
+    path = "/Users/allanjulian/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -261,18 +256,22 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nordic.nvim
-time([[Config for nordic.nvim]], true)
-try_loadstring("\27LJ\2\nÅ\1\0\0\3\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\4\0009\0\5\0'\2\6\0B\0\2\1K\0\1\0\23colorscheme nordic\bcmd\bvim\1\0\2\nstyle\tdark\19comment_italic\2\nsetup\vnordic\frequire\0", "config", "nordic.nvim")
-time([[Config for nordic.nvim]], false)
--- Config for: windows.nvim
-time([[Config for windows.nvim]], true)
-try_loadstring("\27LJ\2\nå\1\0\0\3\0\b\0\0186\0\0\0009\0\1\0)\1\n\0=\1\2\0006\0\0\0009\0\1\0)\1\n\0=\1\3\0006\0\0\0009\0\1\0+\1\1\0=\1\4\0006\0\5\0'\2\6\0B\0\2\0029\0\a\0B\0\1\1K\0\1\0\nsetup\fwindows\frequire\16equalalways\16winminwidth\rwinwidth\6o\bvim\0", "config", "windows.nvim")
-time([[Config for windows.nvim]], false)
+-- Config for: barbar.nvim
+time([[Config for barbar.nvim]], true)
+try_loadstring("\27LJ\2\nÉ\1\0\0\3\0\a\0\v6\0\0\0009\0\1\0+\1\1\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0005\2\6\0B\0\2\1K\0\1\0\1\0\3\rtabpages\1\14animation\1\14clickable\2\nsetup\vbarbar\frequire\22barbar_auto_setup\6g\bvim\0", "config", "barbar.nvim")
+time([[Config for barbar.nvim]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
+-- Config for: windows.nvim
+time([[Config for windows.nvim]], true)
+try_loadstring("\27LJ\2\nå\1\0\0\3\0\b\0\0186\0\0\0009\0\1\0)\1\n\0=\1\2\0006\0\0\0009\0\1\0)\1\n\0=\1\3\0006\0\0\0009\0\1\0+\1\1\0=\1\4\0006\0\5\0'\2\6\0B\0\2\0029\0\a\0B\0\1\1K\0\1\0\nsetup\fwindows\frequire\16equalalways\16winminwidth\rwinwidth\6o\bvim\0", "config", "windows.nvim")
+time([[Config for windows.nvim]], false)
+-- Config for: nordic.nvim
+time([[Config for nordic.nvim]], true)
+try_loadstring("\27LJ\2\nÅ\1\0\0\3\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\4\0009\0\5\0'\2\6\0B\0\2\1K\0\1\0\23colorscheme nordic\bcmd\bvim\1\0\2\nstyle\tdark\19comment_italic\2\nsetup\vnordic\frequire\0", "config", "nordic.nvim")
+time([[Config for nordic.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

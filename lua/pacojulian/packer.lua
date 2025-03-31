@@ -115,5 +115,14 @@ return require('packer').startup(function(use)
     use('jose-elias-alvarez/null-ls.nvim')
     use('MunifTanjim/prettier.nvim')
     use("folke/zen-mode.nvim")
-    use("github/copilot.vim")
+
+    -- comments --
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+    --  /
+    --  use("github/copilot.vim")
 end)
